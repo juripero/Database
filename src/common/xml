@@ -1,0 +1,10 @@
+<!ELEMENT database (table*)>
+<!ELEMENT table (tablename,field*,values?)>
+<!ELEMENT tablename (#PCDATA)>
+<!ELEMENT field (fieldname, fieldtype)>
+<!ELEMENT fieldname (#PCDATA)>
+<!ELEMENT fieldtype (#PCDATA)>
+<!ELEMENT values (row*)>
+<!ELEMENT row (column*)>
+<!ELEMENT column (#PCDATA)>
+<!ATTLIST column name CDATA #REQUIRED> 

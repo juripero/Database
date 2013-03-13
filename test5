@@ -1,0 +1,6 @@
+define table empX having fields (empnoX integer, lastNameX varchar, titleX varchar, dateOfHireX date, salaryX real, stillEmployedX boolean);
+insert (20, 'brown', 'tester', '02/14/2009', 40000.00, true) into empX;
+insert (21, 'harris', 'tweeter', '03/21/2011', 38000.00, true) into empX;
+insert (22, 'miller', 'factoryWorker', '08/01/2009', 30000.00, false) into empX;
+insert (25, 'stevens', 'factoryWorker', '08/01/2009', 30000.00, true) into empX;
+print empX;

@@ -1,0 +1,85 @@
+define table foo having fields (name varchar, age integer, dob date);
+
+insert ('Tyler', 24, '06/28/1988') into foo;
+insert ('Buser' , 25, '11/09/1987') into foo;
+insert ('Jeremy' , 30, '02/08/1982') into foo;
+insert ('Kailey' , 22, '06/29/1990') into foo;
+
+
+| project | join | intersect | union | minus | sort
+
+delete foo where age > 30;
+
+print emp;
+delete emp where empno < 3;
+print emp;
+delete emp where empno > 21;
+print emp;
+insert (01, 'tebow', 'president', '01/01/2001', 160000.00, true) into emp; 
+insert (02, 'damon', 'vicePresident', '01/01/2001', 140000.00, true) into emp;
+insert (22, 'miller', 'factoryWorker', '08/01/2009', 30000.00, false) into emp;
+insert (25, 'stevens', 'factoryWorker', '08/01/2009', 30000.00, true) into emp;
+delete emp where salary <= 50000.00;
+print emp;
+delete emp where salary >= 80000.00;
+print emp;
+insert (01, 'tebow', 'president', '01/01/2001', 160000.00, true) into emp; 
+insert (02, 'damon', 'vicePresident', '01/01/2001', 140000.00, true) into emp;
+insert (03, 'cassel', 'CEO', '01/01/2001', 130000.00, true) into emp;
+insert (04, 'brees', 'CFO', '01/01/2001', 115000.00, true) into emp;
+insert (05, 'smith', 'directorOfOperations', '01/01/2001', 100000.00, true) into emp;
+insert (11, 'rodgers', 'engineer', '06/01/2002', 80000.00, true) into emp;
+
+define table emp having fields (empno integer, lastName varchar, title varchar, dateOfHire date, salary real, stillEmployed boolean);
+
+insert (01, 'tebow', 'president', '01/01/2001', 160000.00, true) into emp; 
+insert (02, 'damon', 'vicePresident', '01/01/2001', 140000.00, true) into emp;
+insert (03, 'cassel', 'CEO', '01/01/2001', 130000.00, true) into emp;
+insert (04, 'brees', 'CFO', '01/01/2001', 115000.00, true) into emp;
+insert (05, 'smith', 'directorOfOperations', '01/01/2001', 100000.00, true) into emp;
+insert (11, 'rodgers', 'engineer', '06/01/2002', 80000.00, true) into emp;
+insert (12, 'schwab', 'engineer', '09/20/2002', 70000.00, true) into emp;
+insert (13, 'benny', 'engineer', '09/20/2002', 75000.00, true) into emp;
+insert (14, 'rickybobby', 'driver', '06/06/2004', 74000.00, true) into emp;
+insert (15, 'jennings', 'HR', '11/09/2005', 50000.00, false) into emp;
+insert (20, 'brown', 'tester', '02/14/2009', 40000.00, true) into emp;
+insert (21, 'harris', 'tweeter', '03/21/2011', 38000.00, true) into emp;
+insert (22, 'miller', 'factoryWorker', '08/01/2009', 30000.00, false) into emp;
+insert (25, 'stevens', 'factoryWorker', '08/01/2009', 30000.00, true) into emp;
+print emp;
+
+
+select (select emp where dateOfHire < '01/01/2002') where salary > 115000.00;
+select (project emp over empno, lastName, salary) where salary > 115000.00;
+
+delete emp where empno < 3;
+print emp;
+delete emp where empno > 21;
+print emp;
+insert (01, 'tebow', 'president', '01/01/2001', 160000.00, true) into emp; 
+insert (02, 'damon', 'vicePresident', '01/01/2001', 140000.00, true) into emp;
+insert (22, 'miller', 'factoryWorker', '08/01/2009', 30000.00, false) into emp;
+insert (25, 'stevens', 'factoryWorker', '08/01/2009', 30000.00, true) into emp;
+delete emp where salary <= 50000.00;
+print emp;
+delete emp where salary >= 80000.00;
+print emp;
+insert (01, 'tebow', 'president', '01/01/2001', 160000.00, true) into emp; 
+insert (02, 'damon', 'vicePresident', '01/01/2001', 140000.00, true) into emp;
+insert (03, 'cassel', 'CEO', '01/01/2001', 130000.00, true) into emp;
+insert (04, 'brees', 'CFO', '01/01/2001', 115000.00, true) into emp;
+insert (05, 'smith', 'directorOfOperations', '01/01/2001', 100000.00, true) into emp;
+insert (11, 'rodgers', 'engineer', '06/01/2002', 80000.00, true) into emp;
+
+print emp;
+update emp set salary = 30000.00 where empno = 11;
+print emp;
+update emp set salary = 55555.00 where empno != 11;
+print emp;
+update emp set salary = 100000.00 where empno <= 12;
+print emp;
+update emp set salary = 350000.00 where dateOfHire < '01/01/2002';
+print emp;
+update emp set salary = 11500 where dateOfHire > '02/14/2009';
+print emp;
+

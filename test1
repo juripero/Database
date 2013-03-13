@@ -1,0 +1,18 @@
+define table foo having fields (name varchar, age integer, dob date);
+insert ('Tyler', 24, '06/28/1988') into foo;
+insert ('Buser' , 25, '11/09/1987') into foo;
+insert ('Jeremy' , 30, '02/08/1982') into foo;
+insert ('Allen' , 24, '06/27/1888') into foo;
+insert ('Mike' , 25, '02/07/1987') into foo;
+insert ('Chad' , 26, '07/20/1986') into foo;
+insert ('Kailey' , 22, '06/29/1990') into foo;
+print foo;
+define table bar having fields (university varchar, year varchar, grad boolean);
+insert ('WVU', 'Senior', false) into bar;
+insert ('WVU', 'Grad', true) into bar;
+insert ('VT', 'Sophomore', false) into bar;
+insert ('VT', 'Freshman', false) into bar;
+insert ('VT', 'Grad', true) into bar;
+print bar;
+print dictionary;
+

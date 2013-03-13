@@ -1,0 +1,18 @@
+delete emp where empno < 3;
+print emp;
+delete emp where empno > 21;
+print emp;
+insert (01, 'tebow', 'president', '01/01/2001', 160000.00, true) into emp; 
+insert (02, 'damon', 'vicePresident', '01/01/2001', 140000.00, true) into emp;
+insert (22, 'miller', 'factoryWorker', '08/01/2009', 30000.00, false) into emp;
+insert (25, 'stevens', 'factoryWorker', '08/01/2009', 30000.00, true) into emp;
+update emp set salary = 30000.00 where empno = 11;
+order (project emp over empno, lastName) by empno;
+update emp set salary = 55555.00 where empno != 11;
+print emp;
+update emp set salary = 100000.00 where empno <= 12;
+print emp;
+update emp set salary = 350000.00 where dateOfHire < '01/01/2002';
+print emp;
+update emp set salary = 11500 where dateOfHire > '02/14/2009';
+print emp;
